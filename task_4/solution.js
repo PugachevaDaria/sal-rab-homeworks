@@ -20,11 +20,16 @@ return data.products;
 // и выполняете addProduct с каждым элементом массива products (передавая элемент массива как аргумент)
 
 function renderProductsCards(json) {
-clearProducts();
-let products = parseProducts(json);
-let length = products.length;
-for (let i = 0; i < length; i++) {
-addProduct(products[i]);
-}
+  clearProducts();
+  let products = parseProducts(json);
+  function parseProducts(json) {
+  let data = JSON.parse(json);
+  return data.products;
   }
+  let length = products.length;
+  for (let i = 0; i < length; i++) {
+  addProduct(products[i]);
+  }
+    }
+  
 
